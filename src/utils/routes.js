@@ -1,0 +1,6 @@
+export const HOME="OZER STORE"
+export const CART="Cart"
+export const CATEGORIES="Categories"
+export const FAVORITES="Favorites"
+export const PROFILE="Profile"
+export const TAB="TAB"
