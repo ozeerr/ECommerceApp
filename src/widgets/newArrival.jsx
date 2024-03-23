@@ -8,7 +8,7 @@ import ProductsCard from '../components/widgets/productsCard'
 const NewArrival = () => {
   const [products,setProducts]=useState()
   const getAllProducts=()=>{
-      getRequest(`${BASE_URL}${PRODUCTS_URL}`)
+      getRequest(`${BASE_URL}${PRODUCTS_URL}/?limit=5`)
       .then((response)=>setProducts(response?.data))
       .catch((error)=>console.log(error))
   }
@@ -23,7 +23,7 @@ const NewArrival = () => {
       <FlatList
       showsHorizontalScrollIndicator={false}
       horizontal
-      data={products?.splice(0,5)}
+      data={products}
       renderItem={({item})=><ProductsCard product={item}/>}
       keyExtractor={(item)=>item.id.toString()}
       />

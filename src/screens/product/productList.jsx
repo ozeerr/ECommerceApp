@@ -1,4 +1,4 @@
-import { FlatList, StyleSheet, Text, View } from 'react-native'
+import { FlatList, View } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import { screenStyle } from '../../styles/screenStyle'
 import { BASE_URL, PRODUCTS_URL } from '../../service/urls'
@@ -6,7 +6,6 @@ import ProductCard from '../../components/product/productCard'
 import { getRequest } from '../../service/verbs'
 import Spinner from '../../ui/spinner'
 import CategorySelect from '../../components/widgets/categorySelect'
-import { height } from '../../utils/dimensions'
 
 const ProductList = () => {
   const [products,setProducts]=useState([])
@@ -44,4 +43,3 @@ useEffect(()=>{
 
 export default ProductList
 
-const styles = StyleSheet.create({})

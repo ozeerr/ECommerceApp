@@ -6,7 +6,7 @@ import { AppColors } from '../../theme/color'
 import { height } from '../../utils/dimensions'
 
 const CategorySelect = ({onSelect}) => {
-    const [categories,setCategories]=useState(["asd"])
+    const [categories,setCategories]=useState()
     const [selectCategory,setSelectCategory]=useState("electronics")
     const getCategories=()=>{
         getRequest(`${BASE_URL}${PRODUCTS_URL}/categories`)
@@ -22,7 +22,6 @@ const CategorySelect = ({onSelect}) => {
     const selectCategoryHandler=({item})=>{
         setSelectCategory(item)
         onSelect(item)
-        console.log(categories)
     }
   
     const renderItem=({item})=>{

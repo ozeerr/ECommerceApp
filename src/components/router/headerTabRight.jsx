@@ -23,7 +23,7 @@ const HeaderTabRight = () => {
           alignItems: 'center',
           justifyContent: 'center',
           gap: 3,
-          marginRight: 30,
+          marginRight: 10,
           borderLeftWidth: 0.2,
           paddingLeft: 10,
         }}>

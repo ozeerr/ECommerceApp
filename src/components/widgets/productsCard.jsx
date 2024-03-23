@@ -1,27 +1,29 @@
-import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { Image, StyleSheet, Text, TouchableOpacity, View,Pressable} from 'react-native'
 import React from 'react'
 import { Heart, MedalStar } from 'iconsax-react-native'
 import { AppColors } from '../../theme/color'
+import { useNavigation } from '@react-navigation/native'
+import { PRODUCT_DETAIL } from '../../utils/routes'
 
 const ProductsCard = ({product,value}) => {
+  const navigation=useNavigation();
   return (
-    <View style={styles.productItemWrapper}>
+    <Pressable onPress={()=>navigation.navigate(PRODUCT_DETAIL,{item:product})} style={styles.productItemWrapper}>
                 {value&& <View style={{position:"absolute",top:5,left:0}}><MedalStar size="32" color={AppColors.YELLOW} variant="Bold"/></View>}
-      <View style={{width:160,height:150,justifyContent:"center",alignItems:"center",paddingTop:10}}>
-        <Image source={{uri:product.image}}  style={{width:"100%",height:"100%",objectFit:"contain"}}/>
+      <View style={styles.imageContainerWrapper}>
+        <Image source={{uri:product.image}}  style={styles.imageWrapper}/>
       </View>
-     
-        <View style={{width:160,gap:7,justifyContent:"center"}}>
-            <Text style={{fontWeight:"bold",fontSize:15}}>{product.title.substring(0,29)}...</Text>
-            <Text style={{fontWeight:"bold",fontSize:11,color:"gray"}}>{product.category}</Text>
-            <View style={{flexDirection:"row",justifyContent:"space-between"}}>
-            <Text style={{fontWeight:"bold",fontSize:14}}>{product.price}$</Text>
+        <View style={styles.contentWrapper}>
+            <Text style={styles.title}>{product.title.substring(0,29)}...</Text>
+            <Text style={styles.category}>{product.category}</Text>
+            <View style={styles.bottomContentWrapper}>
+            <Text style={styles.price}>{product.price}$</Text>
             <TouchableOpacity>
             <Heart size="19" color="red" variant="Bold"/>
             </TouchableOpacity>
             </View>
         </View>
-    </View>
+    </Pressable>
   )
 }
 
@@ -38,8 +40,30 @@ const styles = StyleSheet.create({
         alignItems:"center",
         gap:20,
         borderColor:AppColors.PRIMARY
+    },
+    imageContainerWrapper:{
+      width:160,height:150,justifyContent:"center",alignItems:"center",paddingTop:10
+    },
+    imageWrapper:{
+      width:"100%",height:"100%",objectFit:"contain"
+    },
+    contentWrapper:{
+      width:160,gap:7,justifyContent:"center"
+    },
+    title:{
+      fontWeight:"bold",fontSize:15
+    },
+    category:{
+      fontWeight:"bold",fontSize:11,color:"gray"
+    },
+    bottomContentWrapper:{
+      flexDirection:"row",justifyContent:"space-between"
+    },
+    price:{
+      fontWeight:"bold",fontSize:14
     }
-}
+    }
+
 )
 
 
