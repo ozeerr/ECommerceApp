@@ -3,9 +3,10 @@ import React, { useEffect, useState } from 'react'
 import { getRequest } from '../../service/verbs'
 import { BASE_URL, PRODUCTS_URL } from '../../service/urls'
 import { AppColors } from '../../theme/color'
+import { height } from '../../utils/dimensions'
 
 const CategorySelect = ({onSelect}) => {
-    const [categories,setCategories]=useState([])
+    const [categories,setCategories]=useState(["asd"])
     const [selectCategory,setSelectCategory]=useState("electronics")
     const getCategories=()=>{
         getRequest(`${BASE_URL}${PRODUCTS_URL}/categories`)
@@ -21,6 +22,7 @@ const CategorySelect = ({onSelect}) => {
     const selectCategoryHandler=({item})=>{
         setSelectCategory(item)
         onSelect(item)
+        console.log(categories)
     }
   
     const renderItem=({item})=>{
@@ -48,14 +50,18 @@ export default CategorySelect
 
 const styles = StyleSheet.create({
     container:{
-        flex:1,marginVertical:12
+      marginVertical:12,
+      width:"100%",
+      height:height*0.05,
+      alignItems:"center",
+      justifyContent: "center",
     },
     CategoryButton:{
         padding:12,
-        borderWidth:0.5,
         marginRight:8,
         borderRadius:100,
-        borderColor:AppColors.PRIMARY
+        alignItems:"center",
+        justifyContent:"center",
     },
     activeCategory:{
         backgroundColor:AppColors.PRIMARY

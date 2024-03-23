@@ -2,8 +2,11 @@ import { Image, StyleSheet, Text, Touchable, TouchableOpacity, View } from 'reac
 import React from 'react'
 import { height, width } from '../utils/dimensions'
 import { AppColors } from '../theme/color'
+import { PRODUCT_LIST } from '../utils/routes'
+import { useNavigation } from '@react-navigation/native'
 
 const Introduction = () => {
+  const navigation =useNavigation()
   return (
     <View style={styles.container}>
       <View style={styles.wrapper}>
@@ -11,7 +14,7 @@ const Introduction = () => {
           <Text style={styles.firstText}>20%  <Text style={styles.secondText}>Discount</Text></Text>
           <Text>on your first purchase</Text>
          </View>
-         <TouchableOpacity style={styles.button}>
+         <TouchableOpacity onPress={()=>navigation.navigate(PRODUCT_LIST)} style={styles.button}>
             <Text style={styles.buttonText}>Shop Now</Text>
          </TouchableOpacity>
          <View style={styles.imageWrapper}>

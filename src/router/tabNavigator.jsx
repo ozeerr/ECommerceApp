@@ -12,12 +12,13 @@ import HeaderTabRight from '../components/router/headerTabRight';
 
 const Tab = createBottomTabNavigator();
 
-const TabNavigator = ({navigation}) => {
+const TabNavigator = () => {
 
   return (
     <Tab.Navigator
     
       screenOptions={{
+        headerTitleStyle: {color: AppColors.PRIMARY},
         tabBarActiveTintColor: AppColors.PRIMARY,
         tabBarShowLabel: false,
         headerRight:()=>{
@@ -25,6 +26,7 @@ const TabNavigator = ({navigation}) => {
                <HeaderTabRight/>
             )
         },
+        headerTitleStyle:{color:AppColors.PRIMARY}
         
       }
 }>
@@ -40,7 +42,7 @@ const TabNavigator = ({navigation}) => {
             );
           },
           headerTitleStyle: {
-            color: AppColors.BLACK,
+            color: AppColors.PRIMARY,
             fontWeight: 'bold',
             fontSize: 20,
           }
