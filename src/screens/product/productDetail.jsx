@@ -3,14 +3,15 @@ import React from 'react'
 import { screenStyle } from '../../styles/screenStyle'
 import { height, width } from '../../utils/dimensions'
 import { AppColors } from '../../theme/color'
-import { Heart } from 'iconsax-react-native'
+import { Code, Heart, Star } from 'iconsax-react-native'
 import Button from '../../ui/button'
+import Counter from '../../ui/counter'
 
 const ProductDetail = ({route}) => {
   const {item}=route?.params
   return (
   <View style={screenStyle.container}>
-  <ScrollView style={styles.scrollViewStyle}>
+  <ScrollView showsVerticalScrollIndicator={false} style={styles.scrollViewStyle}>
         <View style={styles.Imagewrapper}>
           <Image source={{uri:item?.image}} style={styles.ImageStyle}/>
         </View>
@@ -20,11 +21,14 @@ const ProductDetail = ({route}) => {
           <View style={styles.priceWrapper}><Text style={styles.priceStyle}>{item?.price}$</Text><TouchableOpacity>
             <Heart size="30" color="red" variant="Bold"/>
             </TouchableOpacity></View>
+            <View style={{flexDirection:"row"}}><Star size="30" color={AppColors.YELLOW} variant="Bold"/><Text style={styles.rateText}>{item.rating.rate}</Text></View>
           <Text style={styles.descriptionStyle}>{item?.description}</Text>
         </View>
+        <View style={{height:200}}></View>
     </ScrollView>
     <View style={styles.buttonWrapper}>
-          <Button title={"Satın Al"} onPress={()=>console.warn("calisti")}/>
+          <Counter/>
+          <View style={{width:"70%"}}><Button title={"Satın Al"} onPress={()=>console.warn("calisti")}/></View>
         </View>
     </View>
   )
@@ -34,7 +38,8 @@ export default ProductDetail
 
 const styles = StyleSheet.create({
   scrollViewStyle:{
-    padding:10
+    padding:10,
+   
   },
   Imagewrapper:{
     height:height*0.5,borderWidth:0.2,alignItems:"center",justifyContent:"center",borderColor:AppColors.PRIMARY,padding:10
@@ -60,7 +65,12 @@ const styles = StyleSheet.create({
   descriptionStyle:{
     fontWeight:500,fontSize:15,marginTop:20
   },
+  rateText:{
+    color:AppColors.YELLOW,fontSize:20,fontWeight:"bold"
+  
+  },
   buttonWrapper:{
-    position:'absolute',bottom:40,width:width,justifyContent:"center",alignItems:"center",paddingHorizontal:30
+    position:'absolute',bottom:40,width:width,flexDirection:"row",gap:10,alignItems:"center",justifyContent:"center",
+    
   }
 })

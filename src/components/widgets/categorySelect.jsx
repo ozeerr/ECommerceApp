@@ -7,7 +7,7 @@ import { height } from '../../utils/dimensions'
 
 const CategorySelect = ({onSelect}) => {
     const [categories,setCategories]=useState()
-    const [selectCategory,setSelectCategory]=useState("electronics")
+    const [selectCategory,setSelectCategory]=useState()
     const getCategories=()=>{
         getRequest(`${BASE_URL}${PRODUCTS_URL}/categories`)
         .then((response)=>setCategories(response?.data))

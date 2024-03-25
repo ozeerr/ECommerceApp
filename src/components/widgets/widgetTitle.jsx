@@ -1,12 +1,15 @@
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import { width } from '../../utils/dimensions'
+import { useNavigation } from '@react-navigation/native'
+import { PRODUCT_LIST } from '../../utils/routes'
 
-const WidgetTitle = ({title}) => {
+const WidgetTitle = ({title,category}) => {
+  const navigation = useNavigation()
   return (
     <View style={styles.container}>
       <Text style={styles.title}>{title}</Text>
-      <TouchableOpacity><Text style={styles.text}>See More</Text></TouchableOpacity>
+      <TouchableOpacity onPress={()=>navigation.navigate(PRODUCT_LIST,{category:category,title:title})}><Text style={styles.text}>See More</Text></TouchableOpacity>
     </View>
   )
 }

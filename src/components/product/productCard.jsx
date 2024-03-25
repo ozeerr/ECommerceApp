@@ -1,14 +1,16 @@
 import { Image, StyleSheet, Text, TouchableOpacity, View,Pressable } from 'react-native'
-import React from 'react'
+import React, { useContext } from 'react'
 import { Heart, MedalStar } from 'iconsax-react-native'
 import { AppColors } from '../../theme/color'
 import { width } from '../../utils/dimensions'
 import { PRODUCT_DETAIL } from '../../utils/routes'
 import { useNavigation } from '@react-navigation/native'
 import Button from '../../ui/button'
+import StoreContext from '../../context'
 
 const ProductCard = ({product}) => {
     const navigation=useNavigation()
+    const {addCart}=useContext(StoreContext)
   return (
     <Pressable onPress={()=>navigation.navigate(PRODUCT_DETAIL,{item:product})} style={styles.productItemWrapper}>
       <View style={styles.imageWrapper}>
@@ -24,7 +26,7 @@ const ProductCard = ({product}) => {
             </TouchableOpacity>
             </View>
         </View>
-        <View style={styles.buttonWrapper}><Button title={"Satın Al"} onPress={()=>console.warn("calisti")}/></View>
+        <View style={styles.buttonWrapper}><Button title={"Sepete Ekle"} onPress={()=>{addCart(product)}}/></View>
     </Pressable>
   )
 }

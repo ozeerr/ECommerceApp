@@ -8,7 +8,7 @@ import ProductsCard from '../components/widgets/productsCard'
 const NewArrival = () => {
   const [products,setProducts]=useState()
   const getAllProducts=()=>{
-      getRequest(`${BASE_URL}${PRODUCTS_URL}/?limit=5`)
+      getRequest(`${BASE_URL}${PRODUCTS_URL}/category/men's clothing/?limit=5`)
       .then((response)=>setProducts(response?.data))
       .catch((error)=>console.log(error))
   }
@@ -19,7 +19,7 @@ const NewArrival = () => {
 
   return (
     <View style={styles.container}>
-      <WidgetTitle title="New Arrival" />
+      <WidgetTitle title="New Arrival" category={"men's clothing"}/>
       <FlatList
       showsHorizontalScrollIndicator={false}
       horizontal

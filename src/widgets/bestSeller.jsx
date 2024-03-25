@@ -8,7 +8,7 @@ import CategorySelect from '../components/widgets/categorySelect'
 
 const BestSeller = () => {
   const [products,setProducts]=useState()
-  const getBestSellerProducts=(category="electronics")=>{
+  const getBestSellerProducts=(category="men's clothing")=>{
       getRequest(`${BASE_URL}${PRODUCTS_URL}/category/${category}/?sort=desc`)
       .then((response)=>setProducts(response?.data))
       .catch((error)=>console.log(error))
@@ -19,7 +19,7 @@ const BestSeller = () => {
 
   return (
     <View style={styles.container}>
-      <WidgetTitle title="Best Seller" />
+      <WidgetTitle title="Best Seller" category={"women's clothing"} />
       <CategorySelect onSelect={(category)=>getBestSellerProducts(category)}/>
       <FlatList
       showsHorizontalScrollIndicator={false}

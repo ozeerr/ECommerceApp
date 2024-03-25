@@ -7,26 +7,30 @@ import { getRequest } from '../../service/verbs'
 import Spinner from '../../ui/spinner'
 import CategorySelect from '../../components/widgets/categorySelect'
 
-const ProductList = () => {
+const ProductList = ({route}) => {
   const [products,setProducts]=useState([])
   const [isLoading,setIsLoading]=useState()
+  const [categorys,setCategorys]=useState()
+  const filterCategory=route?.params?.category
+  
 
-  const getAllProducts=(category="electronics")=>{
+  const getAllProducts=(category)=>{
+    const url=category?PRODUCTS_URL+`/category/${category}`:PRODUCTS_URL;
     setIsLoading(true)
-    getRequest(`${BASE_URL}${PRODUCTS_URL}/category/${category}`)
+    getRequest(url)
     .then((response)=>setProducts(response?.data))
     .catch((error)=>console.log(error))
     .finally(()=>setIsLoading(false))
 }
 
 useEffect(()=>{
-  getAllProducts()
+  getAllProducts(filterCategory)
 },[])
 
  
   return (
     <View style={screenStyle.container}>
-      <CategorySelect onSelect={(category)=>getAllProducts(category)}/>
+      {!filterCategory && <CategorySelect onSelect={(category)=>getAllProducts(category)}/>}
       {isLoading?
       <Spinner/>
       :
