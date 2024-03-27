@@ -1,6 +1,6 @@
 import {StyleSheet} from 'react-native';
 import React from 'react';
-import {CART, PRODUCT_DETAIL, PRODUCT_LIST, TAB} from '../utils/routes';
+import {CART, CHECKOUT, LOGIN, PRODUCT_DETAIL, PRODUCT_LIST, TAB} from '../utils/routes';
 import CartScreen from '../screens/cart';
 import TabNavigator from './tabNavigator';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
@@ -8,6 +8,9 @@ import ProductList from '../screens/product/productList';
 import ProductDetail from '../screens/product/productDetail';
 import {AppColors} from '../theme/color';
 import HeaderTabRight from '../components/router/headerTabRight';
+import { Stacks } from 'iconsax-react-native';
+import CheckoutScreen from '../screens/checkout';
+import LoginScreen from '../screens/login';
 
 const Stack = createNativeStackNavigator();
 
@@ -42,6 +45,8 @@ const RootNavigator = () => {
         name={PRODUCT_DETAIL}
         component={ProductDetail}
       />
+      <Stack.Screen name={CHECKOUT} component={CheckoutScreen} />
+      <Stack.Screen name={LOGIN} component={LoginScreen} />
     </Stack.Navigator>
   );
 };

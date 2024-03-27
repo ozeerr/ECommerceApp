@@ -10,7 +10,6 @@ import CategorySelect from '../../components/widgets/categorySelect'
 const ProductList = ({route}) => {
   const [products,setProducts]=useState([])
   const [isLoading,setIsLoading]=useState()
-  const [categorys,setCategorys]=useState()
   const filterCategory=route?.params?.category
   
 

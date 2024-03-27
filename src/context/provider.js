@@ -4,7 +4,7 @@ import StoreContext from '.'
 
 const Provider = ({children}) => {
     const [cart,setCart]=useState([])
-
+    const [isLogin,setIsLogin]=useState(false)
     const addCart=(item)=>{
         setCart([...cart,item])
     }

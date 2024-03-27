@@ -1,13 +1,15 @@
 import { StyleSheet, Text, View,Image, ScrollView,TouchableOpacity } from 'react-native'
-import React from 'react'
+import React, { useContext } from 'react'
 import { screenStyle } from '../../styles/screenStyle'
 import { height, width } from '../../utils/dimensions'
 import { AppColors } from '../../theme/color'
 import { Code, Heart, Star } from 'iconsax-react-native'
 import Button from '../../ui/button'
 import Counter from '../../ui/counter'
+import StoreContext from '../../context'
 
 const ProductDetail = ({route}) => {
+  const {addCart}=useContext(StoreContext)
   const {item}=route?.params
   return (
   <View style={screenStyle.container}>
@@ -28,7 +30,7 @@ const ProductDetail = ({route}) => {
     </ScrollView>
     <View style={styles.buttonWrapper}>
           <Counter/>
-          <View style={{width:"70%"}}><Button title={"Satın Al"} onPress={()=>console.warn("calisti")}/></View>
+          <View style={{width:"70%"}}><Button title={"Sepete Ekle"} onPress={()=>addCart(item)}/></View>
         </View>
     </View>
   )
