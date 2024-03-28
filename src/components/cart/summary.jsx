@@ -46,7 +46,7 @@ const Summary = ({total}) => {
         </View>
         <View style={{flexDirection:"row",justifyContent:"space-between"}}>
             <Text>Total:</Text>
-            <Text style={{fontWeight:"bold"}}>{total()-50}$</Text>
+            <Text style={{fontWeight:"bold"}}>{(total()-50)?.toFixed(2)}$</Text>
         </View>
         </View>
         <View style={{height:height*0.1,alignItems:"center",justifyContent:"center"}}><Button title="Checkout" onPress={()=>checkOut()}/></View>

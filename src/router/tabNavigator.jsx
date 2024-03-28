@@ -44,10 +44,12 @@ const TabNavigator = () => {
             color: AppColors.PRIMARY,
             fontWeight: 'bold',
             fontSize: 20,
-          }
+          },
+                  
         }
         
     }
+      
         name={HOME}
         component={HomeScreen}
       />
