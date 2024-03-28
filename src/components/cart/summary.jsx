@@ -4,30 +4,25 @@ import Button from '../../ui/button'
 import { height } from '../../utils/dimensions'
 import StoreContext from '../../context'
 import { useNavigation } from '@react-navigation/native'
-import { LOGIN } from '../../utils/routes'
+import { CHECKOUT, LOGIN } from '../../utils/routes'
 
 const Summary = ({total}) => {
     const navigation=useNavigation()
-    const {isLogin}=useContext(StoreContext)
-
-    const checkOut=()=>{
-        if(isLogin){
-            navigation.navigate("CHECKOUT")
-        }else{
-            Alert.alert('LOGIN', 'You need Login first.', [
-                {
-                  text: 'OK',
-                  onPress: () => navigation.navigate(LOGIN),
-                },
-                {
-                  text: 'Cancel',
-                  onPress: () => console.log('Cancel Pressed'),
-                  style: 'cancel',
-                },
-              
-              ]);
-        }
-    }
+    const {isLogin,setTotal}=useContext(StoreContext)
+    const checkOut = () => {
+      if (isLogin) {
+        navigation.navigate(CHECKOUT,{total:(total()-50)?.toFixed(2)});
+      } else {
+        Alert.alert('Log-in', 'Please Log-in', [
+          {
+            text: 'Cancel',
+            onPress: () => console.log('Cancel Pressed'),
+            style: 'cancel',
+          },
+          {text: 'OK', onPress: () => navigation.navigate(LOGIN)},
+        ]);
+      }
+    };
 
   return (
     <View style={{gap:10,padding:20,borderTopRightRadius:30,borderTopLeftRadius:30,backgroundColor:"#FFFBFF"}}>

@@ -32,7 +32,7 @@ const ProductDetail = ({route}) => {
     </ScrollView>
     <View style={styles.buttonWrapper}>
           <Counter/>
-          <View style={{width:"70%"}}><Button title={"Sepete Ekle"} onPress={()=>addCart(item)}/></View>
+          <View style={{width:"70%"}}><Button title={"Add to basket"} onPress={()=>addCart(item)}/></View>
         </View>
     </View>
   )

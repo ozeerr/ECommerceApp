@@ -24,7 +24,7 @@ const ProductCard = ({product}) => {
             <Like item={product}/>
             </View>
         </View>
-        <View style={styles.buttonWrapper}><Button title={"Sepete Ekle"} onPress={()=>{addCart(product)}}/></View>
+        <View style={styles.buttonWrapper}><Button title={"Add to basket"} onPress={()=>{addCart(product)}}/></View>
     </Pressable>
   )
 }

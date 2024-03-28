@@ -4,6 +4,7 @@ const AppColors={
     GRAY:"#B0BEC5",
     BLACK:"#000000",
     YELLOW:"#FFD700",
+    PINK:"black"
 }
 
 export {AppColors}

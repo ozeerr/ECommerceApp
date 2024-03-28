@@ -21,7 +21,7 @@ const FavoriteCard = ({item}) => {
             <View style={styles.priceWrapper}>
             <Text style={styles.price}>{item?.price}$</Text>
             </View>
-            <TouchableOpacity onPress={()=>removeFavorite(item)}><Text style={{color:"red",fontWeight:"bold"}}>Favorilerden Kaldır</Text></TouchableOpacity>
+            <TouchableOpacity onPress={()=>removeFavorite(item)}><Text style={{color:"red",fontWeight:"bold",fontSize:13}}>Remove From Favorites</Text></TouchableOpacity>
         </View>
     </Pressable>
   )
