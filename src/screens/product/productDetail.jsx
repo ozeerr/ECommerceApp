@@ -20,9 +20,11 @@ const ProductDetail = ({route}) => {
         <View style={styles.ContentWrapper}>
           <Text style={styles.titleStyle}>{item?.title}</Text>
           <Text style={styles.categoryTextStyle}>{item?.category}</Text>
-          <View style={styles.priceWrapper}><Text style={styles.priceStyle}>{item?.price}$</Text><TouchableOpacity>
+          <View style={styles.priceWrapper}><Text style={styles.priceStyle}>{item?.price}$</Text>
+          <TouchableOpacity>
             <Heart size="30" color="red" variant="Bold"/>
-            </TouchableOpacity></View>
+            </TouchableOpacity>
+            </View>
             <View style={{flexDirection:"row"}}><Star size="30" color={AppColors.YELLOW} variant="Bold"/><Text style={styles.rateText}>{item.rating.rate}</Text></View>
           <Text style={styles.descriptionStyle}>{item?.description}</Text>
         </View>

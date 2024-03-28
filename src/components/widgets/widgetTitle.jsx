@@ -9,7 +9,9 @@ const WidgetTitle = ({title,category}) => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>{title}</Text>
-      <TouchableOpacity onPress={()=>navigation.navigate(PRODUCT_LIST,{category:category,title:title})}><Text style={styles.text}>See More</Text></TouchableOpacity>
+      <TouchableOpacity onPress={()=>navigation.navigate(PRODUCT_LIST,{category:category,title:title})}>
+        <Text style={styles.text}>See More</Text>
+      </TouchableOpacity>
     </View>
   )
 }

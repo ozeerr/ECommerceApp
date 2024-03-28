@@ -1,9 +1,10 @@
 import { Image, StyleSheet, Text, TouchableOpacity, View,Pressable} from 'react-native'
 import React from 'react'
-import { Heart, MedalStar } from 'iconsax-react-native'
+import {  MedalStar } from 'iconsax-react-native'
 import { AppColors } from '../../theme/color'
 import { useNavigation } from '@react-navigation/native'
 import { PRODUCT_DETAIL } from '../../utils/routes'
+import Like from '../../ui/like'
 
 const ProductsCard = ({product,value}) => {
   const navigation=useNavigation();
@@ -18,9 +19,7 @@ const ProductsCard = ({product,value}) => {
             <Text style={styles.category}>{product.category}</Text>
             <View style={styles.bottomContentWrapper}>
             <Text style={styles.price}>{product.price}$</Text>
-            <TouchableOpacity>
-            <Heart size="19" color="red" variant="Bold"/>
-            </TouchableOpacity>
+           <Like item={product}/>
             </View>
         </View>
     </Pressable>

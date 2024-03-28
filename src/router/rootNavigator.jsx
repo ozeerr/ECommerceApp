@@ -1,4 +1,3 @@
-import {StyleSheet} from 'react-native';
 import React from 'react';
 import {CART, CHECKOUT, LOGIN, PRODUCT_DETAIL, PRODUCT_LIST, TAB} from '../utils/routes';
 import CartScreen from '../screens/cart';
@@ -8,7 +7,6 @@ import ProductList from '../screens/product/productList';
 import ProductDetail from '../screens/product/productDetail';
 import {AppColors} from '../theme/color';
 import HeaderTabRight from '../components/router/headerTabRight';
-import { Stacks } from 'iconsax-react-native';
 import CheckoutScreen from '../screens/checkout';
 import LoginScreen from '../screens/login';
 

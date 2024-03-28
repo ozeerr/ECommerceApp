@@ -2,12 +2,11 @@ import { Alert, StyleSheet, Text, View } from 'react-native'
 import React, { useContext } from 'react'
 import Button from '../../ui/button'
 import { height } from '../../utils/dimensions'
-import { AppColors } from '../../theme/color'
 import StoreContext from '../../context'
 import { useNavigation } from '@react-navigation/native'
 import { LOGIN } from '../../utils/routes'
 
-const Summary = () => {
+const Summary = ({total}) => {
     const navigation=useNavigation()
     const {isLogin}=useContext(StoreContext)
 
@@ -27,7 +26,6 @@ const Summary = () => {
                 },
               
               ]);
-          
         }
     }
 
@@ -36,19 +34,19 @@ const Summary = () => {
         <View style={{gap:20}}>
         <View style={{flexDirection:"row",justifyContent:"space-between"}}>
             <Text>Subtotal:</Text>
-            <Text style={{fontWeight:"bold"}}>100$</Text>
+            <Text style={{fontWeight:"bold"}}>{total()}$</Text>
         </View>
         <View style={{flexDirection:"row",justifyContent:"space-between"}}>
             <Text>Delivery Fee:</Text>
-            <Text style={{fontWeight:"bold"}}>100$</Text>
+            <Text style={{fontWeight:"bold"}}>20$</Text>
         </View>
            <View style={{flexDirection:"row",justifyContent:"space-between"}}>
             <Text>Discount:</Text>
-            <Text style={{fontWeight:"bold"}}>100$</Text>
+            <Text style={{fontWeight:"bold"}}>30$</Text>
         </View>
         <View style={{flexDirection:"row",justifyContent:"space-between"}}>
             <Text>Total:</Text>
-            <Text style={{fontWeight:"bold"}}>100$</Text>
+            <Text style={{fontWeight:"bold"}}>{total()-50}$</Text>
         </View>
         </View>
         <View style={{height:height*0.1,alignItems:"center",justifyContent:"center"}}><Button title="Checkout" onPress={()=>checkOut()}/></View>

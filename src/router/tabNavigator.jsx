@@ -1,7 +1,6 @@
 import React from 'react';
-import {StyleSheet, Text, Touchable, TouchableOpacity, View} from 'react-native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {CART, CATEGORIES, FAVORITES, HOME, PROFILE} from '../utils/routes';
+import { CATEGORIES, FAVORITES, HOME, PROFILE} from '../utils/routes';
 import HomeScreen from '../screens/home';
 import CategoriesScreen from '../screens/categories';
 import FavoritesScreen from '../screens/favorites';
@@ -89,4 +88,3 @@ const TabNavigator = () => {
 
 export default TabNavigator;
 
-const styles = StyleSheet.create({});

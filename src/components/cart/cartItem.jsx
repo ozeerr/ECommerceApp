@@ -1,12 +1,7 @@
 import { Image, StyleSheet, Text, TouchableOpacity, View,Pressable } from 'react-native'
-import React, { useContext } from 'react'
-import { Heart, MedalStar } from 'iconsax-react-native'
+import React from 'react'
+import { Heart } from 'iconsax-react-native'
 import { AppColors } from '../../theme/color'
-import { width } from '../../utils/dimensions'
-import { PRODUCT_DETAIL } from '../../utils/routes'
-import { useNavigation } from '@react-navigation/native'
-import Button from '../../ui/button'
-import StoreContext from '../../context'
 import Counter from '../../ui/counter'
 
 const ProductCard = ({item}) => {

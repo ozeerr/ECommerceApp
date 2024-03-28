@@ -5,16 +5,26 @@ import StoreContext from '.'
 const Provider = ({children}) => {
     const [cart,setCart]=useState([])
     const [isLogin,setIsLogin]=useState(false)
+    const [favorites,setFavorites]=useState([])
     const addCart=(item)=>{
         setCart([...cart,item])
     }
-
     const removeCart=(item)=>{
-        const newCart=cart.filter((cartItem)=>cartItem.id!==item.id)
-        setCart(newCart)
-    }
+      const newCart=cart.filter((cartItem)=>cartItem.id!==item.id)
+      setCart(newCart)
+  }
+    const addFavorite=(item)=>{
+      setFavorites([...favorites,item])
+  }
+  
+  const removeFavorite=(item)=>{
+    const newFav=favorites.filter((favoriItem)=>favoriItem.id!==item.id)
+    setFavorites(newFav)
+}
+
+
   return (
-    <StoreContext.Provider value={{cart,setCart,addCart,removeCart}}>
+    <StoreContext.Provider value={{cart,setCart,addCart,removeCart,addFavorite,favorites,removeFavorite}}>
         {children}
     </StoreContext.Provider>
   )

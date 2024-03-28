@@ -8,13 +8,18 @@ import Summary from '../../components/cart/summary'
 
 const CartScreen = () => {
   const {cart} = useContext(StoreContext)
+  const total=()=>{
+    let total=0
+    cart.forEach(item=>total+=item.price)
+    return total
+  }
   return (
     <View style={screenStyle.container}>
       <FlatList
       data={cart}
       renderItem={({item})=><CartItem item={item}/>}
       />
-      <Summary/>
+      <Summary total={total}/>
     </View>
   )
 }
