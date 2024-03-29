@@ -1,4 +1,4 @@
-import { FlatList, StyleSheet, Text, Touchable, TouchableOpacity, View } from 'react-native'
+import { FlatList, StyleSheet, Text,  TouchableOpacity, View } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import { getRequest } from '../../service/verbs'
 import { BASE_URL, PRODUCTS_URL } from '../../service/urls'

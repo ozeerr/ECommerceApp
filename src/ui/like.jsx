@@ -1,4 +1,4 @@
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { StyleSheet,  TouchableOpacity} from 'react-native'
 import React, { useContext } from 'react'
 import { Heart } from 'iconsax-react-native'
 import StoreContext from '../context'

@@ -1,4 +1,4 @@
-import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {StyleSheet, TouchableOpacity, View} from 'react-native';
 import React from 'react';
 import {  SearchNormal1 } from 'iconsax-react-native';
 import { AppColors } from '../../theme/color';

@@ -1,6 +1,5 @@
-import { FlatList, StyleSheet, Text, View } from 'react-native'
+import { FlatList, StyleSheet,  View } from 'react-native'
 import React, { useContext } from 'react'
-import { AppColors } from '../../theme/color'
 import StoreContext from '../../context'
 import { screenStyle } from '../../styles/screenStyle'
 import CartItem from '../../components/cart/cartItem'

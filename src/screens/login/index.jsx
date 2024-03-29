@@ -1,12 +1,11 @@
 import { Alert, StyleSheet, Text, View } from 'react-native'
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext,  useState } from 'react'
 import {Input} from "@ui-kitten/components"
 import { screenStyle } from '../../styles/screenStyle'
 import { AppColors } from '../../theme/color'
 import Button from '../../ui/button'
 import StoreContext from '../../context'
 import { Eye, EyeSlash } from 'iconsax-react-native'
-import { useNavigation } from '@react-navigation/native'
 import { postRequest } from '../../service/verbs'
 import { LOGIN_URL } from '../../service/urls'
 const LoginScreen = ({navigation}) => {

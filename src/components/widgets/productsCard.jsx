@@ -1,4 +1,4 @@
-import { Image, StyleSheet, Text, TouchableOpacity, View,Pressable} from 'react-native'
+import { Image, StyleSheet, Text,  View,Pressable} from 'react-native'
 import React from 'react'
 import {  MedalStar } from 'iconsax-react-native'
 import { AppColors } from '../../theme/color'

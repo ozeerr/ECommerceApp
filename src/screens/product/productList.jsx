@@ -1,7 +1,7 @@
 import { FlatList, View } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import { screenStyle } from '../../styles/screenStyle'
-import { BASE_URL, PRODUCTS_URL } from '../../service/urls'
+import { PRODUCTS_URL } from '../../service/urls'
 import ProductCard from '../../components/product/productCard'
 import { getRequest } from '../../service/verbs'
 import Spinner from '../../ui/spinner'

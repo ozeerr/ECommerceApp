@@ -1,9 +1,7 @@
-import { FlatList, StyleSheet, Text, Touchable, TouchableOpacity, View } from 'react-native'
+import { FlatList, StyleSheet, View } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import { getRequest } from '../../service/verbs'
 import { BASE_URL, PRODUCTS_URL } from '../../service/urls'
-import { AppColors } from '../../theme/color'
-import { height } from '../../utils/dimensions'
 import CategoryCard from '../../components/categories/categoryCard'
 import { screenStyle } from '../../styles/screenStyle'
 
